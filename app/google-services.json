@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1089005995021",
+    "firebase_url": "https://appatas-e90dd.firebaseio.com",
+    "project_id": "appatas-e90dd",
+    "storage_bucket": "appatas-e90dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089005995021:android:ad3714d684d06de0",
+        "android_client_info": {
+          "package_name": "com.app.apppatas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1089005995021-inhm7rhemthjnlbcegbdb6716m2j32p9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.apppatas",
+            "certificate_hash": "160a2901ce71f4acf0980fd1dbb9e491b1f5bf65"
+          }
+        },
+        {
+          "client_id": "1089005995021-p2i1bc4ceh9rmhq5ftdmmmgvo6o1s5if.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwtqKXcwgg-LaH7LPLDV_iWYxPdXYwAQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1089005995021-p2i1bc4ceh9rmhq5ftdmmmgvo6o1s5if.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

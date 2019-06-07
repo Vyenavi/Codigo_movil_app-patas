@@ -7,6 +7,10 @@
     <string name="password">Contraseña</string>
     <string name="login">Iniciar Sesión</string>
 
+    <string name="facebook_app_id">1048371772028490</string>
+    <string name="fb_login_protocol_scheme">fb1048371772028490</string>
+
+
     <!--menu-navigation-bat-->
     <string name="home">Inicio</string>
     <string name="publication">Publicar</string>
