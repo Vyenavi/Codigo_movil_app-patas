@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">AppPatas</string>
+
+    <!-- login -->
+    <string name="bienvenido">Bienvenid@</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar Sesión</string>
+
+    <!--menu-navigation-bat-->
+    <string name="home">Inicio</string>
+    <string name="publication">Publicar</string>
+    <string name="find">Te Encontre</string>
+
+    <!--home-->
+
+    <!--publicacion-->
+
+    <!--encontrados-->
+
 </resources>
