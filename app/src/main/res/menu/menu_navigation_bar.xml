@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/menu_inicio"
@@ -7,13 +8,23 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/menu_publicar"
-        android:icon="@drawable/ic_action_publicar"
-        android:title="@string/publication" />
+        android:id="@+id/menu_localizado"
+        android:icon="@drawable/ic_action_localizado"
+        android:title="@string/localizacion" />
 
     <item
         android:id="@+id/menu_tencontre"
         android:icon="@drawable/ic_action_encontre"
         android:title="@string/find" />
+
+    <item
+        android:id="@+id/menu_tu_mascota"
+        android:icon="@drawable/ic_action_mascota"
+        android:title="@string/perfil_mascota" />
+
+    <item
+        android:id="@+id/menu_my_perfil"
+        android:icon="@drawable/ic_action_perfil"
+        android:title="@string/perfil" />
 
 </menu>

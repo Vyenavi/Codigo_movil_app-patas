@@ -43,11 +43,17 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.menu_inicio:
                         Toast.makeText(HomeActivity.this, "Codigo de Home", Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.menu_publicar:
-                        Toast.makeText(HomeActivity.this, "Codigo de Publicar", Toast.LENGTH_SHORT).show();
+                    case R.id.menu_localizado:
+                        Toast.makeText(HomeActivity.this, "Codigo de localizado", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.menu_tencontre:
                         Toast.makeText(HomeActivity.this, "Codigo de Te encontre", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.menu_tu_mascota:
+                        Toast.makeText(HomeActivity.this, "Codigo de Tu Perfil Mascota", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.menu_my_perfil:
+                        Toast.makeText(HomeActivity.this, "Codigo de My Perfil", Toast.LENGTH_SHORT).show();
                         break;
                 }
 
