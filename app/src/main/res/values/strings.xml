@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppPatas</string>
+    <string name="app_name">Appatas</string>
 
     <!-- login -->
     <string name="bienvenido">Bienvenid@</string>
@@ -9,8 +9,12 @@
 
     <!--menu-navigation-bat-->
     <string name="home">Inicio</string>
-    <string name="publication">Publicar</string>
+    <string name="localizacion">Localizado</string>
     <string name="find">Te Encontre</string>
+    <string name="perfil_mascota">Mi Mascota</string>
+    <string name="perfil">Perfil</string>
+
+    <string name="publication">Publicar</string>
 
     <!--home-->
 
