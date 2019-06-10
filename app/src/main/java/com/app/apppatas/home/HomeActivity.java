@@ -16,6 +16,9 @@ import android.widget.Toolbar;
 
 import com.app.apppatas.R;
 import com.app.apppatas.encontrar.TeEncontreFragment;
+import com.app.apppatas.localizado.LocalizadoFragment;
+import com.app.apppatas.perfil.mascota.PerfilMascotaFragment;
+import com.app.apppatas.perfil.usuario.PerfilUsuarioFragment;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -51,9 +54,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.menu_inicio:
                 Toast.makeText(HomeActivity.this, "Codigo de Home", Toast.LENGTH_SHORT).show();
                 fragment = new HomeFragment();
+                ((HomeFragment) fragment).getContext(getApplicationContext());
                 break;
             case R.id.menu_localizado:
                 Toast.makeText(HomeActivity.this, "Codigo de localizado", Toast.LENGTH_SHORT).show();
+                fragment = new LocalizadoFragment();
                 break;
             case R.id.menu_tencontre:
                 Toast.makeText(HomeActivity.this, "Codigo de Te encontre", Toast.LENGTH_SHORT).show();
@@ -61,9 +66,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 break;
             case R.id.menu_tu_mascota:
                 Toast.makeText(HomeActivity.this, "Codigo de Tu Perfil Mascota", Toast.LENGTH_SHORT).show();
+                fragment = new PerfilMascotaFragment();
                 break;
             case R.id.menu_my_perfil:
                 Toast.makeText(HomeActivity.this, "Codigo de My Perfil", Toast.LENGTH_SHORT).show();
+                fragment = new PerfilUsuarioFragment();
                 break;
         }
 
