@@ -19,6 +19,7 @@ import com.app.apppatas.encontrar.TeEncontreFragment;
 import com.app.apppatas.localizado.LocalizadoFragment;
 import com.app.apppatas.perfil.mascota.PerfilMascotaFragment;
 import com.app.apppatas.perfil.usuario.PerfilUsuarioFragment;
+import com.app.apppatas.publicar.PublicarFragment;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -54,7 +55,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.menu_inicio:
                 Toast.makeText(HomeActivity.this, "Codigo de Home", Toast.LENGTH_SHORT).show();
                 fragment = new HomeFragment();
-                ((HomeFragment) fragment).getContext(getApplicationContext());
                 break;
             case R.id.menu_localizado:
                 Toast.makeText(HomeActivity.this, "Codigo de localizado", Toast.LENGTH_SHORT).show();
@@ -77,7 +77,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         return loadFragment(fragment);
     }
 
-    private boolean loadFragment(Fragment fragment) {
+    public boolean loadFragment(Fragment fragment) {
         //switching fragment
         if (fragment != null) {
             getSupportFragmentManager()

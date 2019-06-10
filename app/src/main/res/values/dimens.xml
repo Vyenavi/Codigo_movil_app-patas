@@ -10,4 +10,6 @@
 
     <dimen name="with_image">50dp</dimen>
     <dimen name="height_image">50dp</dimen>
+
+    <dimen name="margin_popup">20dp</dimen>
 </resources>

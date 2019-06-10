@@ -18,11 +18,26 @@
     <string name="perfil_mascota">Mi Mascota</string>
     <string name="perfil">Mi Perfil</string>
 
-    <string name="publication">Publicar</string>
-
+    <string name="publication">Publicacion: Perdi mi Mascota</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
     <!--home-->
 
     <!--publicacion-->
+    <string name="nombre_usuario">Usuario:</string>
+    <string name="hora">Hora:</string>
+    <string name="fecha">Fecha:</string>
+    <string name="nombre_mascota">Mascota:</string>
+    <string name="raza">Raza:</string>
+    <string name="color">Color:</string>
+    <string name="tamanio">Tamaño:</string>
+    <string name="aditamentos">Aditamentos:</string>
+    <string name="donde">Donde</string>
+    <string name="observaciones">Observaciones:</string>
+    <string name="enfermedades">Enfermedades:</string>
+    <string name="recompensa">Recompensa:</string>
+
+
 
     <!--encontrados-->
 
