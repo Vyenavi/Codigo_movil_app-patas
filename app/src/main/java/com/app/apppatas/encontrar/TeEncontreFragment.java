@@ -40,17 +40,18 @@ public class TeEncontreFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentManager fragmentManager = myContextFragment.getSupportFragmentManager();
         View vistaGeneral = inflater.inflate(R.layout.fragment_te_encontre, null);
-/*
+
         ViewPager viewPager = vistaGeneral.findViewById(R.id.viewpagerTeEcontre);
         TabLayout tabLayout = vistaGeneral.findViewById(R.id.tabsTeEncontre);
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(fragmentManager);
-        //viewPager.setAdapter(adapter);
-
         adapter.addFragment(new TeEncontreCamaraFragment(), "Camara");
         adapter.addFragment(new TeEncontreCaracteristicasFragment(), "Caracteristicas");
+        //adapter.addFragment(new );
 
-        tabLayout.setupWithViewPager(viewPager);*/
+        viewPager.setAdapter(adapter);
+
+        tabLayout.setupWithViewPager(viewPager);
 
         return vistaGeneral;
     }
