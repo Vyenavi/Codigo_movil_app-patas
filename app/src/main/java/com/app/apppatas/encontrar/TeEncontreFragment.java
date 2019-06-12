@@ -48,11 +48,15 @@ public class TeEncontreFragment extends Fragment {
         ViewPagerAdapter adapter = new ViewPagerAdapter(fragmentManager);
         adapter.addFragment(new TeEncontreCamaraFragment(), "Camara");
         adapter.addFragment(new TeEncontreGalleryFragment(), "Gallery");
-        adapter.addFragment(new TeEncontreCaracteristicasFragment(), "Caracteristicas");
+        adapter.addFragment(new TeEncontreCaracteristicasFragment(), "Formulario");
 
         viewPager.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_media_camera);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_media_gallery);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_media_features);
 
         return vistaGeneral;
     }
