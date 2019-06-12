@@ -17,6 +17,7 @@ import com.app.apppatas.R;
 import com.app.apppatas.encontrar.adaptador.ViewPagerAdapter;
 import com.app.apppatas.encontrar.by_cam.TeEncontreCamaraFragment;
 import com.app.apppatas.encontrar.by_features.TeEncontreCaracteristicasFragment;
+import com.app.apppatas.encontrar.by_gallery.TeEncontreGalleryFragment;
 
 public class TeEncontreFragment extends Fragment {
 
@@ -46,8 +47,8 @@ public class TeEncontreFragment extends Fragment {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(fragmentManager);
         adapter.addFragment(new TeEncontreCamaraFragment(), "Camara");
+        adapter.addFragment(new TeEncontreGalleryFragment(), "Gallery");
         adapter.addFragment(new TeEncontreCaracteristicasFragment(), "Caracteristicas");
-        //adapter.addFragment(new );
 
         viewPager.setAdapter(adapter);
 
