@@ -12,15 +12,18 @@
         <activity android:name=".encontrar.TeEncontreActivity" />
         <activity android:name=".home.HomeActivity" />
         <activity android:name=".Inicio">
+
+        </activity>
+        <activity android:name=".perfil.mascota.PerfilMascotaActivity" />
+        <activity android:name=".perfil.usuario.PerfilUsuarioActivity" />
+        <activity android:name=".perfil.mascota.vista.VistaMascotaActivity"></activity>
+        <activity android:name=".publicar.PublicarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".perfil.mascota.PerfilMascotaActivity" />
-        <activity android:name=".perfil.usuario.PerfilUsuarioActivity" />
-        <activity android:name=".perfil.mascota.vista.VistaMascotaActivity"></activity>
     </application>
 
 </manifest>
