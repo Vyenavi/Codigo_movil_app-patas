@@ -5,17 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".publicar.PublicarActivity">
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButtonPublicar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.878"
         app:srcCompat="@drawable/ic_action_publicar" />
 
     <android.support.design.widget.BottomNavigationView
@@ -138,17 +142,27 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="35dp"
             android:layout_marginBottom="254dp"
-            android:text="Ubicacion" />
+            android:text="¿En que Zona?" />
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="325dp"
-            android:layout_height="100dp"
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="223dp"
+            android:layout_height="116dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="43dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="140dp" />
+            android:layout_marginStart="100dp"
+            android:layout_marginBottom="130dp"
+            app:srcCompat="@drawable/mapa" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_marginTop="63dp"
+            android:layout_marginEnd="-116dp"
+            android:layout_toStartOf="@+id/checkBox"
+            android:text="Adjuntar Ubicacion" />
 
     </RelativeLayout>
 
