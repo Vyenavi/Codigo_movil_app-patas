@@ -77,8 +77,6 @@
                 android:layout_width="355dp"
                 android:layout_height="match_parent"
 
-                android:layout_alignTop="@+id/null"
-                android:layout_alignEnd="@+id/null"
                 android:hint="¿Algunos datos Adicionales?" />
         </android.support.design.widget.TextInputLayout>
 
