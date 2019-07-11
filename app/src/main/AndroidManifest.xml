@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".perfil.usuario.PerfilUsuarioActivity"></activity>
         <activity android:name=".encontrar.TeEncontreActivity" />
         <activity android:name=".home.HomeActivity" />
         <activity android:name=".Inicio">
@@ -19,8 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".perfil.mascota.PerfilMascotaActivity" />
-        <activity android:name=".perfil.usuario.PerfilUsuarioActivity" />
-        <activity android:name=".perfil.mascota.vista.VistaMascotaActivity"></activity>
+        <activity android:name=".perfil.usuario.CrearUsuario" />
+        <activity android:name=".perfil.mascota.vista.VistaMascotaActivity" />
     </application>
 
 </manifest>

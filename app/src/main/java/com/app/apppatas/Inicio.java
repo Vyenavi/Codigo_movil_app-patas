@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.app.apppatas.home.HomeActivity;
+import com.app.apppatas.perfil.usuario.CrearUsuario;
 
 public class Inicio extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class Inicio extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+                Intent i = new Intent(getApplicationContext(), CrearUsuario.class);
                 startActivity(i);
             }
         });

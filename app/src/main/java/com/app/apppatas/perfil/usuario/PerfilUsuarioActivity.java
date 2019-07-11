@@ -10,6 +10,6 @@ public class PerfilUsuarioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_usuario);
+        setContentView(R.layout.activity_perfil_usuario2);
     }
 }
