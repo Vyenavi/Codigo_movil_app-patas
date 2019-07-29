@@ -4,19 +4,22 @@ import java.util.Date;
 
 public class Publicacion {
     int idpublicacion;
-    Date publicacion_fecha;
-    Double publicacion_recompensa;
-    Date publicacion_tiempo_perdida;
+    Date fecha_publicacion;
+    Double recompensa;
+    Date fecha_perdida;
+    Double latitud_perdida;
+    Double longitud_perdida;
     Date perdida_fecha;
 
-    public Publicacion(int idpublicacion, Date publicacion_fecha, Double publicacion_recompensa, Date publicacion_tiempo_perdida, Date perdida_fecha) {
+    public Publicacion(int idpublicacion, Date fecha_publicacion, Double recompensa, Date fecha_perdida, Double latitud_perdida, Double longitud_perdida, Date perdida_fecha) {
         this.idpublicacion = idpublicacion;
-        this.publicacion_fecha = publicacion_fecha;
-        this.publicacion_recompensa = publicacion_recompensa;
-        this.publicacion_tiempo_perdida = publicacion_tiempo_perdida;
+        this.fecha_publicacion = fecha_publicacion;
+        this.recompensa = recompensa;
+        this.fecha_perdida = fecha_perdida;
+        this.latitud_perdida = latitud_perdida;
+        this.longitud_perdida = longitud_perdida;
         this.perdida_fecha = perdida_fecha;
     }
-
 
     public int getIdpublicacion() {
         return idpublicacion;
@@ -26,28 +29,44 @@ public class Publicacion {
         this.idpublicacion = idpublicacion;
     }
 
-    public Date getPublicacion_fecha() {
-        return publicacion_fecha;
+    public Date getFecha_publicacion() {
+        return fecha_publicacion;
     }
 
-    public void setPublicacion_fecha(Date publicacion_fecha) {
-        this.publicacion_fecha = publicacion_fecha;
+    public void setFecha_publicacion(Date fecha_publicacion) {
+        this.fecha_publicacion = fecha_publicacion;
     }
 
-    public Double getPublicacion_recompensa() {
-        return publicacion_recompensa;
+    public Double getRecompensa() {
+        return recompensa;
     }
 
-    public void setPublicacion_recompensa(Double publicacion_recompensa) {
-        this.publicacion_recompensa = publicacion_recompensa;
+    public void setRecompensa(Double recompensa) {
+        this.recompensa = recompensa;
     }
 
-    public Date getPublicacion_tiempo_perdida() {
-        return publicacion_tiempo_perdida;
+    public Date getFecha_perdida() {
+        return fecha_perdida;
     }
 
-    public void setPublicacion_tiempo_perdida(Date publicacion_tiempo_perdida) {
-        this.publicacion_tiempo_perdida = publicacion_tiempo_perdida;
+    public void setFecha_perdida(Date fecha_perdida) {
+        this.fecha_perdida = fecha_perdida;
+    }
+
+    public Double getLatitud_perdida() {
+        return latitud_perdida;
+    }
+
+    public void setLatitud_perdida(Double latitud_perdida) {
+        this.latitud_perdida = latitud_perdida;
+    }
+
+    public Double getLongitud_perdida() {
+        return longitud_perdida;
+    }
+
+    public void setLongitud_perdida(Double longitud_perdida) {
+        this.longitud_perdida = longitud_perdida;
     }
 
     public Date getPerdida_fecha() {
