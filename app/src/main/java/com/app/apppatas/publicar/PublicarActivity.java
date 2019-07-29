@@ -52,11 +52,10 @@ public class PublicarActivity extends AppCompatActivity {
                 switch (response.code()){
                     case 200:
                         Publicacion p = (Publicacion) response.body();
-                        Log.d("cancha", String.valueOf(p.getRecompensa()));
+                        Log.d("cancha", p.getRecompensa());
                         break;
                 }
             }
-
             @Override
             public void onFailure(Call<List<Publicacion>> call, Throwable t) {
                 Log.e("Error Appatas",t.getMessage());
