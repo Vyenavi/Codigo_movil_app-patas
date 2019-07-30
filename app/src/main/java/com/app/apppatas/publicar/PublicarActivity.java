@@ -48,11 +48,14 @@ public class PublicarActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Publicacion>>() {
             @Override
             public void onResponse(Call<List<Publicacion>> call, Response<List<Publicacion>> response) {
+
                 Log.e("Codigo ",response.code()+"");
                 switch (response.code()){
                     case 200:
-                        Publicacion p = (Publicacion) response.body();
-                        Log.d("cancha", p.getRecompensa());
+                        List<Publicacion> publicaciones = response.body();
+                        for (Publicacion p : publicaciones) {
+                            Log.e("app", p.getRecompensa() + "");
+                        }
                         break;
                 }
             }
