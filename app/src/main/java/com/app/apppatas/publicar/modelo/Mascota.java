@@ -1,57 +1,57 @@
 package com.app.apppatas.publicar.modelo;
 
 public class Mascota {
-   int idmascota;
-   String masc_nombre;
-   String masc_edad;
-   String masc_acsesorios;
-   String masc_observaciones;
+   int id;
+   String nombre;
+   String sexo;
+   String observaciones;
+   int raza;
 
-    public Mascota(int idmascota, String masc_nombre, String masc_edad, String masc_acsesorios, String masc_observaciones) {
-        this.idmascota = idmascota;
-        this.masc_nombre = masc_nombre;
-        this.masc_edad = masc_edad;
-        this.masc_acsesorios = masc_acsesorios;
-        this.masc_observaciones = masc_observaciones;
+    public Mascota(int id, String nombre, String sexo, String observaciones, int raza) {
+        this.id = id;
+        this.nombre = nombre;
+        this.sexo = sexo;
+        this.observaciones = observaciones;
+        this.raza = raza;
     }
 
-    public int getIdmascota() {
-        return idmascota;
+    public int getId() {
+        return id;
     }
 
-    public void setIdmascota(int idmascota) {
-        this.idmascota = idmascota;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getMasc_nombre() {
-        return masc_nombre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setMasc_nombre(String masc_nombre) {
-        this.masc_nombre = masc_nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getMasc_edad() {
-        return masc_edad;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setMasc_edad(String masc_edad) {
-        this.masc_edad = masc_edad;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
-    public String getMasc_acsesorios() {
-        return masc_acsesorios;
+    public String getObservaciones() {
+        return observaciones;
     }
 
-    public void setMasc_acsesorios(String masc_acsesorios) {
-        this.masc_acsesorios = masc_acsesorios;
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
-    public String getMasc_observaciones() {
-        return masc_observaciones;
+    public int getRaza() {
+        return raza;
     }
 
-    public void setMasc_observaciones(String masc_observaciones) {
-        this.masc_observaciones = masc_observaciones;
+    public void setRaza(int raza) {
+        this.raza = raza;
     }
 }
