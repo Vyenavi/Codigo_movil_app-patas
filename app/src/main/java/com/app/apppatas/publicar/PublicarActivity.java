@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,14 +26,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PublicarActivity extends AppCompatActivity {
-    String url="http://172.23.8.109:8000";
+    String url="http://proyectosmovil.pythonanywhere.com";
     List<Publicacion> publicaciones;
+    ImageView imagen_mapa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publicar);
-
+        imagen_mapa.findViewById(R.id.image_mapa);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)

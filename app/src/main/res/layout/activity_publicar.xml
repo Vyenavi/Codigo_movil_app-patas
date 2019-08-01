@@ -72,6 +72,12 @@
                 android:layout_height="wrap_content"
                 android:text="¿En que Zona?" />
 
+            <ImageView
+                android:id="@+id/image_mapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/mapa" />
+
         </LinearLayout>
 
         <LinearLayout
