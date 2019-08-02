@@ -9,16 +9,17 @@ public class Publicacion {
     Date fecha_perdida;
     Double latitud_perdida;
     Double longitud_perdida;
-    Date perdida_fecha;
+    String estado;
 
-    public Publicacion(int idpublicacion, Date fecha_publicacion, Double recompensa, Date fecha_perdida, Double latitud_perdida, Double longitud_perdida, Date perdida_fecha) {
+
+    public Publicacion(int idpublicacion, Date fecha_publicacion, Double recompensa, Date fecha_perdida, Double latitud_perdida, Double longitud_perdida, String estado) {
         this.idpublicacion = idpublicacion;
         this.fecha_publicacion = fecha_publicacion;
         this.recompensa = recompensa;
         this.fecha_perdida = fecha_perdida;
         this.latitud_perdida = latitud_perdida;
         this.longitud_perdida = longitud_perdida;
-        this.perdida_fecha = perdida_fecha;
+        this.estado = estado;
     }
 
     public int getIdpublicacion() {
@@ -69,11 +70,11 @@ public class Publicacion {
         this.longitud_perdida = longitud_perdida;
     }
 
-    public Date getPerdida_fecha() {
-        return perdida_fecha;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setPerdida_fecha(Date perdida_fecha) {
-        this.perdida_fecha = perdida_fecha;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
