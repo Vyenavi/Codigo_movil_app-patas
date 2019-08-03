@@ -30,31 +30,21 @@ public class PublicarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publicar);
         //imagen_mapa.findViewById(R.id.image_mapa);
+        Listar_mascota_usuario();
+        //Crear_publicacion();
 
+
+
+
+
+
+    }
+    private void Listar_mascota_usuario(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ServiciosAppatas serviciosappatas = retrofit.create(ServiciosAppatas.class);
-        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(1350.000,"2019-06-09",1,
-                -16.4055966,-71.5072053);
-        registrar_publicacion.enqueue(new Callback<Publicacion>() {
-            @Override
-            public void onResponse(Call<Publicacion> call, Response<Publicacion> response) {
-                switch (response.code()){
-                    case 200:
-                        Publicacion p=response.body();
-                        Log.d("publicar",""+p.getRecompensa());
-                        break;
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Publicacion> call, Throwable t) {
-                Log.e("Error publicacion",t.getMessage());
-            }
-        });
-
         Call<List<Mascota>> call=serviciosappatas.listar_mascocas_usuario(4);
         call.enqueue(new Callback<List<Mascota>>() {
             @Override
@@ -82,6 +72,31 @@ public class PublicarActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void Crear_publicacion(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ServiciosAppatas serviciosappatas = retrofit.create(ServiciosAppatas.class);
 
+        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(1350.000,"2019-06-09",1,
+                -16.4055966,-71.5072053);
+        registrar_publicacion.enqueue(new Callback<Publicacion>() {
+            @Override
+            public void onResponse(Call<Publicacion> call, Response<Publicacion> response) {
+                switch (response.code()){
+                    case 200:
+                        Publicacion p=response.body();
+                        Log.d("publicar",""+p.getRecompensa());
+                        break;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Publicacion> call, Throwable t) {
+                Log.e("Error publicacion",t.getMessage());
+            }
+        });
     }
 }
