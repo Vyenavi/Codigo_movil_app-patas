@@ -102,7 +102,7 @@ public class PublicarActivity extends AppCompatActivity {
                 .build();
         ServiciosAppatas serviciosappatas = retrofit.create(ServiciosAppatas.class);
         Call<List<Mascota>> call=serviciosappatas.listar_mascocas_usuario(4);
-        int pk_publicacion;
+
         Call<Publicacion>actualizar_publicacion=serviciosappatas.actualizar_publicacion(3);
         actualizar_publicacion.enqueue(new Callback<Publicacion>() {
             @Override
