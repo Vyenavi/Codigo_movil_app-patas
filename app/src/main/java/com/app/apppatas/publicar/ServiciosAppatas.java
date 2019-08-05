@@ -18,6 +18,7 @@ public interface ServiciosAppatas {
     @GET("/appatas/publicacion_list/")
     Call<List<Publicacion>> listapublicacion();
 
+
     @GET ("/appatas/mascotas/{usuario}/")
     Call<List<Mascota>>listar_mascocas_usuario(@Path("usuario") int usuario);
 
@@ -28,8 +29,14 @@ public interface ServiciosAppatas {
                                 @Field("mascota")int mascota,
                                 @Field("latitud_perdida")Double latitud_perdida,
                                 @Field("longitud_perdida")Double longitud_perdida);
-    @POST ("publicacion/{pk}/")
-    @FormUrlEncoded
-    Call<Publicacion>actualizar_publicacion(@Path("usuario") int usuario);
 
+
+    @POST ("/appatas/publicacion/{pk}/")
+    @FormUrlEncoded
+    Call<Publicacion>actualizar_publicacion(@Path("pk")int pk,
+                                            @Field("recompensa")Double recompensa,
+                                            @Field("fecha_perdida")String fecha_perdida,
+                                            @Field("mascota")int mascota,
+                                            @Field("latitud_perdida")Double latitud_perdida,
+                                            @Field("longitud_perdida")Double longitud_perdida);
 }
