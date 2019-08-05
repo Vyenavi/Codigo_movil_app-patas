@@ -11,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface ServiciosAppatas {
@@ -31,7 +32,7 @@ public interface ServiciosAppatas {
                                 @Field("longitud_perdida")Double longitud_perdida);
 
 
-    @POST ("/appatas/publicacion/{pk}/")
+    @PUT("/appatas/publicacion/{pk}/")
     @FormUrlEncoded
     Call<Publicacion>actualizar_publicacion(@Path("pk")int pk,
                                             @Field("recompensa")Double recompensa,
