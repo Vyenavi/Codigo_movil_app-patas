@@ -28,7 +28,8 @@ public interface ServiciosAppatas {
                                 @Field("mascota")int mascota,
                                 @Field("latitud_perdida")Double latitud_perdida,
                                 @Field("longitud_perdida")Double longitud_perdida);
-    //@POST ("publicacion/{}/")
-
+    @POST ("publicacion/{pk}/")
+    @FormUrlEncoded
+    Call<Publicacion>actualizar_publicacion(@Path("usuario") int usuario);
 
 }
