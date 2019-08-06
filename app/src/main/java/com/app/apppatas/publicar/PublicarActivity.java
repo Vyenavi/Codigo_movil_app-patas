@@ -12,7 +12,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.Spinner;
 
 import com.app.apppatas.R;
@@ -35,6 +37,7 @@ public class PublicarActivity extends AppCompatActivity {
     String url="http://proyectosmovil.pythonanywhere.com";
     List<Publicacion> publicaciones;
     ImageView imagen_mapa;
+    ImageButton agregar_imagen;
     private CheckBox chk_recompensa;
     private EditText txt_recompensa;
     private double recompensa;
@@ -44,6 +47,7 @@ public class PublicarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publicar);
         imagen_mapa=(ImageView) findViewById(R.id.image_mapa);
+        agregar_imagen=(ImageButton)findViewById(R.id.imb_agregar_imagen);
         chk_recompensa = (CheckBox) findViewById(R.id.chk_recompensa);
         txt_recompensa=(EditText) findViewById(R.id.txt_recompensa);
         txt_recompensa.setEnabled(false);
@@ -53,6 +57,13 @@ public class PublicarActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentmapa = new Intent(getApplicationContext(), MapaActivity.class);
                 startActivity(intentmapa);
+            }
+        });
+
+        agregar_imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                agregar_imagen();
             }
         });
 
@@ -100,6 +111,30 @@ public class PublicarActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void agregar_imagen(View v, final Publicacion p) {
+        PopupMenu popup = new PopupMenu(this, v);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater().inflate(R.menu.menu_opcion_imagen, popup.getMenu());
+
+        //registering popup with OnMenuItemClickListener
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.camara:
+
+                        return true;
+                    case R.id.galeria:
+
+                        return true;
+                    default:
+                        return true;
+                }
+            }
+        });
+        popup.show();//showing popup menu
     }
     private void Listar_mascota_usuario(){
         Retrofit retrofit = new Retrofit.Builder()
