@@ -21,7 +21,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".encontrar.TeEncontreActivity" />
         <activity android:name=".home.HomeActivity" />
-        <activity android:name=".Inicio"></activity>
+        <activity android:name=".Inicio" />
         <activity android:name=".perfil.mascota.PerfilMascotaActivity" />
         <activity android:name=".perfil.usuario.PerfilUsuarioActivity" />
         <activity android:name=".perfil.mascota.vista.VistaMascotaActivity" />
@@ -46,7 +46,10 @@
 
         <activity
             android:name=".publicar.Fragments.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".publicar.MapaActivity"
+            android:label="@string/title_activity_mapa"></activity>
     </application>
 
 </manifest>

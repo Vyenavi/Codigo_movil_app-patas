@@ -43,16 +43,24 @@ public class PublicarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publicar);
-        //imagen_mapa.findViewById(R.id.image_mapa);
+        imagen_mapa=(ImageView) findViewById(R.id.image_mapa);
         chk_recompensa = (CheckBox) findViewById(R.id.chk_recompensa);
         txt_recompensa=(EditText) findViewById(R.id.txt_recompensa);
         txt_recompensa.setEnabled(false);
+
+        imagen_mapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentmapa = new Intent(getApplicationContext(), MapaActivity.class);
+                startActivity(intentmapa);
+            }
+        });
 
         Listar_mascota_usuario();
 
         //Actualizar_publicacion();
         habilitar_recompensa();
-        Crear_publicacion();
+        //Crear_publicacion();
     }
     public void habilitar_recompensa() {
 
