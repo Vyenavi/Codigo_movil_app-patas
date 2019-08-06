@@ -10,6 +10,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -33,29 +35,39 @@ public class PublicarActivity extends AppCompatActivity {
     String url="http://proyectosmovil.pythonanywhere.com";
     List<Publicacion> publicaciones;
     ImageView imagen_mapa;
-
-
+    private CheckBox chk_recompensa;
+    private EditText txt_recompensa;
+    private double recompensa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publicar);
-        imagen_mapa.findViewById(R.id.image_mapa);
-
-        imagen_mapa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
+        //imagen_mapa.findViewById(R.id.image_mapa);
+        chk_recompensa = (CheckBox) findViewById(R.id.chk_recompensa);
+        txt_recompensa=(EditText) findViewById(R.id.txt_recompensa);
+        txt_recompensa.setEnabled(false);
 
         Listar_mascota_usuario();
-        //Crear_publicacion();
-        Actualizar_publicacion();
 
+        //Actualizar_publicacion();
+        habilitar_recompensa();
+        Crear_publicacion();
+    }
+    public void habilitar_recompensa() {
 
-
+        chk_recompensa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //is chkIos checked?
+                if (((CheckBox) v).isChecked()) {
+                    txt_recompensa.setEnabled(true);
+                }else{
+                    txt_recompensa.setEnabled(false);
+                    txt_recompensa.setText("");
+                }
+            }
+        });
 
     }
     @Override
@@ -116,13 +128,15 @@ public class PublicarActivity extends AppCompatActivity {
 
     }
     private void Crear_publicacion(){
+
+        recompensa=Double.parseDouble(txt_recompensa.getText().toString());
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ServiciosAppatas serviciosappatas = retrofit.create(ServiciosAppatas.class);
 
-        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(459.36,"2019-05-09",1,
+        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(recompensa,"2019-05-09",1,
                 -16.4055966,-71.5072053);
         registrar_publicacion.enqueue(new Callback<Publicacion>() {
             @Override
