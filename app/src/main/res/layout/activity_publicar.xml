@@ -12,8 +12,8 @@
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp">
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="30dp">
 
         <LinearLayout
             android:layout_width="358dp"
@@ -43,6 +43,25 @@
                     android:id="@+id/spinner_escoger_mascota"
                     android:layout_width="210dp"
                     android:layout_height="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fecha aproximada de perdida" />
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout

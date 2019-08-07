@@ -60,12 +60,14 @@ public class PublicarActivity extends AppCompatActivity {
             }
         });
 
+
         agregar_imagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                agregar_imagen();
+                //agregar_imagen();
             }
         });
+
 
         Listar_mascota_usuario();
 
@@ -100,7 +102,6 @@ public class PublicarActivity extends AppCompatActivity {
         //Toast.makeText(this,item.getTitle(),Toast.LENGTH_LONG).show();
         switch (item.getItemId()) {
             case R.id.menu_publicacion_eliminar:
-
                 //agregar_nuevo_alumno();
                 return true;
             case R.id.menu_publicacion_cancelar:
@@ -124,10 +125,8 @@ public class PublicarActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.camara:
-
                         return true;
                     case R.id.galeria:
-
                         return true;
                     default:
                         return true;
