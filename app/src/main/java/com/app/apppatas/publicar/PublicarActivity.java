@@ -2,6 +2,7 @@ package com.app.apppatas.publicar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,6 +25,7 @@ import com.app.apppatas.publicar.modelo.Mascota;
 import com.app.apppatas.publicar.modelo.Publicacion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,6 +37,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PublicarActivity extends AppCompatActivity {
+    private static final String CERO = "0";
+    private static final String BARRA = "/";
+    public final Calendar c = Calendar.getInstance();
+    final int mes = c.get(Calendar.MONTH);
+    final int dia = c.get(Calendar.DAY_OF_MONTH);
+    final int anio = c.get(Calendar.YEAR);
+
     String url="http://proyectosmovil.pythonanywhere.com";
     List<Publicacion> publicaciones;
     ImageView imagen_mapa;
@@ -41,6 +51,9 @@ public class PublicarActivity extends AppCompatActivity {
     private CheckBox chk_recompensa;
     private EditText txt_recompensa;
     private double recompensa;
+
+    EditText txt_Fecha_perdida;
+    ImageButton ib_ObtenerFecha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +64,9 @@ public class PublicarActivity extends AppCompatActivity {
         chk_recompensa = (CheckBox) findViewById(R.id.chk_recompensa);
         txt_recompensa=(EditText) findViewById(R.id.txt_recompensa);
         txt_recompensa.setEnabled(false);
+        txt_Fecha_perdida = (EditText) findViewById(R.id.txt_fecha_perdida);
+        ib_ObtenerFecha = (ImageButton) findViewById(R.id.ib_obtener_fecha);
+
 
         imagen_mapa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,13 +76,14 @@ public class PublicarActivity extends AppCompatActivity {
             }
         });
 
-
-        agregar_imagen.setOnClickListener(new View.OnClickListener() {
+        ib_ObtenerFecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //agregar_imagen();
+                obtenerFecha();
             }
         });
+
+
 
 
         Listar_mascota_usuario();
@@ -74,6 +91,30 @@ public class PublicarActivity extends AppCompatActivity {
         //Actualizar_publicacion();
         habilitar_recompensa();
         //Crear_publicacion();
+    }
+    private void obtenerFecha(){
+        DatePickerDialog recogerFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                //Esta variable lo que realiza es aumentar en uno el mes ya que comienza desde 0 = enero
+                final int mesActual = month + 1;
+                //Formateo el día obtenido: antepone el 0 si son menores de 10
+                String diaFormateado = (dayOfMonth < 10)? CERO + String.valueOf(dayOfMonth):String.valueOf(dayOfMonth);
+                //Formateo el mes obtenido: antepone el 0 si son menores de 10
+                String mesFormateado = (mesActual < 10)? CERO + String.valueOf(mesActual):String.valueOf(mesActual);
+                //Muestro la fecha con el formato deseado
+                txt_Fecha_perdida.setText(diaFormateado + BARRA + mesFormateado + BARRA + year);
+
+
+            }
+            //Estos valores deben ir en ese orden, de lo contrario no mostrara la fecha actual
+            /**
+             *También puede cargar los valores que usted desee
+             */
+        },anio, mes, dia);
+        //Muestro el widget
+        recogerFecha.show();
+
     }
     public void habilitar_recompensa() {
 
@@ -97,6 +138,7 @@ public class PublicarActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_publicacion,menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //Toast.makeText(this,item.getTitle(),Toast.LENGTH_LONG).show();
@@ -114,7 +156,7 @@ public class PublicarActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+
     public void agregar_imagen(View v, final Publicacion p) {
         PopupMenu popup = new PopupMenu(this, v);
         //Inflating the Popup using xml file
@@ -178,7 +220,7 @@ public class PublicarActivity extends AppCompatActivity {
                 .build();
         ServiciosAppatas serviciosappatas = retrofit.create(ServiciosAppatas.class);
 
-        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(recompensa,"2019-05-09",1,
+        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(155.00,"2019-05-09",1,
                 -16.4055966,-71.5072053);
         registrar_publicacion.enqueue(new Callback<Publicacion>() {
             @Override

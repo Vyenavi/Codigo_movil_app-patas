@@ -12,8 +12,8 @@
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="30dp">
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="358dp"
@@ -43,12 +43,13 @@
                     android:id="@+id/spinner_escoger_mascota"
                     android:layout_width="210dp"
                     android:layout_height="30dp" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView6"
@@ -57,11 +58,30 @@
                     android:layout_weight="1"
                     android:text="Fecha aproximada de perdida" />
 
-                <CalendarView
-                    android:id="@+id/calendarView"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/txt_fecha_perdida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="date"
+                        android:hint="@string/formato_fecha"/>
+
+                    <ImageButton
+                        android:id="@+id/ib_obtener_fecha"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/calendario"/>
+
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -91,8 +111,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:orientation="vertical"
-                android:layout_weight="2">
+                android:layout_weight="2"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView7"
@@ -128,8 +148,8 @@
 
                     <ImageButton
                         android:id="@+id/imb_agregar_imagen"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/agregar" />
 
@@ -139,8 +159,8 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="357dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="71dp"
