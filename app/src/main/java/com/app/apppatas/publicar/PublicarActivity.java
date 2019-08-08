@@ -105,7 +105,7 @@ public class PublicarActivity extends AppCompatActivity {
     private void obtenerFecha(){
         DatePickerDialog recogerFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            public void onDateSet(DatePicker view, int dayOfMonth,, int month, int year) {
                 //Esta variable lo que realiza es aumentar en uno el mes ya que comienza desde 0 = enero
                 final int mesActual = month + 1;
                 //Formateo el día obtenido: antepone el 0 si son menores de 10
@@ -121,7 +121,7 @@ public class PublicarActivity extends AppCompatActivity {
             /**
              *También puede cargar los valores que usted desee
              */
-        },anio, mes, dia);
+        },dia, mes, anio);
         //Muestro el widget
         recogerFecha.show();
 
