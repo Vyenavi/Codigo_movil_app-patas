@@ -154,37 +154,22 @@
                         android:background="@drawable/agregar" />
 
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_publicar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Publicar" />
+                </LinearLayout>
 
             </LinearLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="71dp"
-                android:layout_marginEnd="8dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-
-                    android:layout_width="355dp"
-                    android:layout_height="match_parent"
-
-                    android:hint="¿Algunos datos Adicionales?" />
-
-                <GridView
-                    android:id="@+id/gridview"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:columnWidth="100dp"
-                    android:horizontalSpacing="10dp"
-                    android:numColumns="auto_fit"
-                    android:padding="5dp"
-                    android:verticalSpacing="10dp"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="218dp" />
-            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
     </ScrollView>

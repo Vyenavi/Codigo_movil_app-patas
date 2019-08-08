@@ -41,6 +41,8 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        mFusedLocationProviderClient=new FusedLocationProviderClient(this);
+
     }
 
 
@@ -80,17 +82,17 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         return resizeBitmap;
     }
     private void getLocationPermission(){
+
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mLocationPermissionGranted = true;
-            //y si no nos va a mostrar un mensaje para configurar el permiso
+
         } else {
             ActivityCompat.requestPermissions(this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
         }
-
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -99,16 +101,16 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
             case PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
-                        //si es que no nos dan permiso nuestro arreglo grantResults esta vacio
+
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     mLocationPermissionGranted = true;
                 }
             }
         }
-        //funcion que pone nuestro marcado en nuestra posicion
+
         updateLocationUI();
 
-        //funcion donde nos dice donde estamos
+
     }
     private void updateLocationUI() {
         //si es que no tenemos mapa no hace nada
@@ -116,17 +118,17 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
         try {
-            //si es que nos dan el permiso aparece el boton
+
             if (mLocationPermissionGranted) {
                 mMap.setMyLocationEnabled(true);
-                //optine las configuraciones de la parte grafica +
+
                 mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
-                //si es que no nos dan permiso nos va a salir el mensaje hasta que  de permisos
+
             } else {
                 mMap.setMyLocationEnabled(false);
                 mMap.getUiSettings().setMyLocationButtonEnabled(false);
-                // mLastKnownLocation accede la ultima ubicacion que se tenia hasta que obtengamos una nueva ubicacion
+
                 mLastKnownLocation = null;
                 getLocationPermission();
             }
@@ -149,8 +151,9 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
                         if (task.isSuccessful()) {
                             // Set the map's camera position to the current location of the device.
                             mLastKnownLocation = task.getResult();
-                            LatLng miubicacion=new LatLng(mLastKnownLocation.getLatitude(),mLastKnownLocation.getLongitude());
 
+                            LatLng miubicacion=new LatLng(mLastKnownLocation.getLatitude(),mLastKnownLocation.getLongitude());
+                            Log.e("mapa",mLastKnownLocation.toString() );
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(miubicacion,15));
                             mMap.addMarker(new MarkerOptions().position(miubicacion).title("Marker"));
                         } else {
@@ -164,5 +167,4 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
             Log.e("Exception: %s", e.getMessage());
         }
     }
-
 }

@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -45,12 +46,14 @@ public class PublicarActivity extends AppCompatActivity {
     final int anio = c.get(Calendar.YEAR);
 
     String url="http://proyectosmovil.pythonanywhere.com";
+
     List<Publicacion> publicaciones;
     ImageView imagen_mapa;
     ImageButton agregar_imagen;
     private CheckBox chk_recompensa;
     private EditText txt_recompensa;
     private double recompensa;
+    private Button btn_publicar;
 
     EditText txt_Fecha_perdida;
     ImageButton ib_ObtenerFecha;
@@ -66,7 +69,13 @@ public class PublicarActivity extends AppCompatActivity {
         txt_recompensa.setEnabled(false);
         txt_Fecha_perdida = (EditText) findViewById(R.id.txt_fecha_perdida);
         ib_ObtenerFecha = (ImageButton) findViewById(R.id.ib_obtener_fecha);
+        btn_publicar=(Button)findViewById(R.id.btn_publicar);
 
+
+        Listar_mascota_usuario();
+
+        //Actualizar_publicacion();
+        habilitar_recompensa();
 
         imagen_mapa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,14 +92,15 @@ public class PublicarActivity extends AppCompatActivity {
             }
         });
 
+        btn_publicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Crear_publicacion();
+            }
+        });
 
 
 
-        Listar_mascota_usuario();
-
-        //Actualizar_publicacion();
-        habilitar_recompensa();
-        //Crear_publicacion();
     }
     private void obtenerFecha(){
         DatePickerDialog recogerFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
@@ -124,6 +134,7 @@ public class PublicarActivity extends AppCompatActivity {
                 //is chkIos checked?
                 if (((CheckBox) v).isChecked()) {
                     txt_recompensa.setEnabled(true);
+                    txt_recompensa.findFocus();
                 }else{
                     txt_recompensa.setEnabled(false);
                     txt_recompensa.setText("");
@@ -155,7 +166,6 @@ public class PublicarActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
     public void agregar_imagen(View v, final Publicacion p) {
         PopupMenu popup = new PopupMenu(this, v);
@@ -214,13 +224,15 @@ public class PublicarActivity extends AppCompatActivity {
     private void Crear_publicacion(){
 
         recompensa=Double.parseDouble(txt_recompensa.getText().toString());
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ServiciosAppatas serviciosappatas = retrofit.create(ServiciosAppatas.class);
 
-        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(155.00,"2019-05-09",1,
+        Call<Publicacion>registrar_publicacion=serviciosappatas.registrar_publicacion(Double.parseDouble(txt_recompensa.getText().toString()),txt_Fecha_perdida.getText().toString(),1,
                 -16.4055966,-71.5072053);
         registrar_publicacion.enqueue(new Callback<Publicacion>() {
             @Override
